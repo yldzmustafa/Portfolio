@@ -36,8 +36,10 @@ Projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları takip 
 ## Yapılandırma
 Proje, `vite.config.js` dosyası ile yapılandırılmıştır.
 
-### İletişim
+## İletişim
 Herhangi bir sorunuz veya öneriniz varsa, benimle iletişime geçebilirsiniz:
 - **E-posta**: yldzzmustafaa.98@gmail.com
+- **Telefon**: 05319621482
+- **LinkedIn**: https://www.linkedin.com/in/mustafa-y%C4%B1ld%C4%B1z-9203371a2/
 
 Teşekkürler!
