@@ -1,6 +1,6 @@
 # Mustafa Yıldız Portfolio
 
-Bu proje, kişisel portföyünüzü sergilemek için geliştirilmiş bir web sitesidir. Proje, modern web teknolojileri kullanılarak oluşturulmuş ve Vite ile yapılandırılmıştır.
+Bu proje, kişisel bir web sitesidir. Proje, modern web teknolojileri kullanılarak oluşturulmuş ve Vite ile yapılandırılmıştır.
 
 ## Özellikler
 - Kişisel bilgiler ve biyografi
@@ -34,19 +34,10 @@ Projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları takip 
 5. Tarayıcınızda `http://localhost:5173` adresini açarak projeyi görüntüleyin.
 
 ## Yapılandırma
-Proje, `vite.config.js` dosyası ile yapılandırılmıştır. Gerekirse bu dosyada değişiklik yapabilirsiniz.
-
-## Katkıda Bulunma
-Katkıda bulunmak isterseniz, lütfen bir pull request gönderin. Her türlü geri bildirim ve öneri memnuniyetle karşılanır.
-
-## Lisans
-Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için [LICENSE](./LICENSE) dosyasına göz atabilirsiniz.
-
----
+Proje, `vite.config.js` dosyası ile yapılandırılmıştır.
 
 ### İletişim
-Herhangi bir sorunuz veya öneriniz varsa, benimle iletişime geçmekten çekinmeyin:
-- **E-posta**: mustafa@example.com
-- **LinkedIn**: [Mustafa Yıldız](https://www.linkedin.com/in/mustafa-yildiz)
+Herhangi bir sorunuz veya öneriniz varsa, benimle iletişime geçebilirsiniz:
+- **E-posta**: yldzzmustafaa.98@gmail.com
 
 Teşekkürler!
