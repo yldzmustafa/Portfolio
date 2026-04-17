@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-const NAV_LINKS = ["Hakkımda", "Yetenekler", "Deneyim", "Eğitim", "İletişim"];
+const NAV_LINKS = ["Hakkımda", "Yetenekler", "Deneyim", "Eğitim", "Freelance", "İletişim"];
 
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
@@ -93,6 +93,93 @@ const certs = [
   { title: "İngilizce – B2 Seviyesi", year: "", status: "completed" },
 ];
 
+const freelanceServices = [
+  {
+    icon: "◈",
+    title: "Kurumsal Web Sitesi",
+    desc: "Şirketinizi veya markanızı en iyi şekilde temsil eden, modern ve etkileyici kurumsal web siteleri tasarlarım.",
+    features: ["Responsive tasarım", "SEO uyumlu yapı", "Hızlı yükleme", "CMS entegrasyonu", "İletişim formu"],
+  },
+  {
+    icon: "⬡",
+    title: "Landing Page & Tanıtım",
+    desc: "Ürününüzü veya hizmetinizi öne çıkaran, dönüşüm odaklı tek sayfalık tanıtım siteleri.",
+    features: ["Yüksek dönüşüm tasarımı", "Animasyonlu bölümler", "Hızlı teslimat", "Revizyon hakkı", "Mobil öncelikli"],
+  },
+  {
+    icon: "◉",
+    title: "Web Uygulama (Django)",
+    desc: "Python & Django ile backend, modern arayüzle frontend'i birleştiren tam kapsamlı web uygulamaları.",
+    features: ["Admin paneli", "Veritabanı tasarımı", "API geliştirme", "Kullanıcı yönetimi", "Deployment desteği"],
+  },
+  {
+    icon: "◎",
+    title: "Mevcut Site Revizyonu",
+    desc: "Eski veya bozuk sitenizi baştan aşağı yenileyerek modern, hızlı ve mobil uyumlu hale getiririm.",
+    features: ["Kod temizleme", "Mobil optimizasyon", "Hız iyileştirme", "Görsel güncelleme", "Test & QA"],
+  },
+];
+
+const packages = [
+  {
+    name: "Başlangıç",
+    price: "5.000",
+    currency: "₺",
+    desc: "Küçük işletmeler ve bireysel girişimler için",
+    color: "#64748b",
+    features: [
+      "5 sayfaya kadar site",
+      "Responsive tasarım",
+      "İletişim formu",
+      "7 gün teslimat",
+      "1 revizyon turu",
+      "1 ay destek",
+    ],
+    popular: false,
+  },
+  {
+    name: "Profesyonel",
+    price: "12.000",
+    currency: "₺",
+    desc: "Kurumsal firmalar ve ciddi projeler için",
+    color: "#f59e0b",
+    features: [
+      "10 sayfaya kadar site",
+      "Özel tasarım + animasyonlar",
+      "SEO temel optimizasyon",
+      "Admin paneli",
+      "14 gün teslimat",
+      "3 revizyon turu",
+      "3 ay destek",
+    ],
+    popular: true,
+  },
+  {
+    name: "Kurumsal",
+    price: "Teklif Al",
+    currency: "",
+    desc: "Büyük ölçekli projeler ve özel ihtiyaçlar",
+    color: "#10b981",
+    features: [
+      "Sınırsız sayfa",
+      "Django web uygulaması",
+      "API entegrasyonları",
+      "Veritabanı tasarımı",
+      "Özel teslimat planı",
+      "Sınırsız revizyon",
+      "6 ay destek",
+    ],
+    popular: false,
+  },
+];
+
+const workProcess = [
+  { step: "01", title: "Keşif & Analiz", desc: "İhtiyaçlarınızı detaylıca dinler, hedef kitlenizi ve beklentilerinizi analiz ederim." },
+  { step: "02", title: "Tasarım & Prototip", desc: "Görsel tasarımı oluştururum, onayınızı alırım. Hiçbir sürpriz olmaz." },
+  { step: "03", title: "Geliştirme", desc: "Onaylanan tasarımı temiz, hızlı ve ölçeklenebilir kodla hayata geçiririm." },
+  { step: "04", title: "Test & Teslim", desc: "Her cihazda test ederim, deployment desteğiyle birlikte siteyi teslim ederim." },
+];
+
 export default function App() {
   const [activeNav, setActiveNav] = useState("Hakkımda");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -116,7 +203,7 @@ export default function App() {
     setMenuOpen(false);
   };
 
-  const sectionIds = ["hakkimda", "yetenekler", "deneyim", "egitim", "iletisim"];
+  const sectionIds = ["hakkimda", "yetenekler", "deneyim", "egitim", "freelance", "iletisim"];
 
   return (
     <div style={{ background: "#080c14", minHeight: "100vh", color: "#e2e8f0", fontFamily: "'DM Sans', sans-serif", overflowX: "hidden" }}>
@@ -376,6 +463,115 @@ export default function App() {
         </div>
       </section>
 
+      {/* FREELANCE */}
+      <section id="freelance" style={{ padding: "100px clamp(1rem,6vw,6rem)", position: "relative", zIndex: 1 }}>
+
+        {/* Section header */}
+        <AnimatedSection>
+          <SectionLabel>Freelance</SectionLabel>
+          <h2 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "clamp(2rem,5vw,3.5rem)", marginBottom: "0.5rem", letterSpacing: -1 }}>
+            Web <span style={{ color: "#f59e0b" }}>Hizmetlerim</span>
+          </h2>
+          <p style={{ color: "#475569", marginBottom: "3.5rem", fontSize: "1rem", maxWidth: 560 }}>
+            Vodafone'daki yazılım geliştirme deneyimim ve QA altyapımla, işinize değer katan kaliteli web siteleri tasarlıyorum.
+          </p>
+        </AnimatedSection>
+
+        {/* Services grid */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.25rem", maxWidth: 1100, marginBottom: "5rem" }}>
+          {freelanceServices.map((svc, i) => (
+            <AnimatedSection key={svc.title} delay={i * 0.08}>
+              <FreelanceServiceCard {...svc} />
+            </AnimatedSection>
+          ))}
+        </div>
+
+        {/* Process */}
+        <AnimatedSection>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "2.5rem" }}>
+            <div style={{ width: 30, height: 1, background: "#f59e0b" }} />
+            <span style={{ color: "#f59e0b", fontSize: "0.75rem", fontWeight: 600, letterSpacing: 3, textTransform: "uppercase" }}>Nasıl Çalışırım?</span>
+          </div>
+        </AnimatedSection>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem", maxWidth: 1000, marginBottom: "5rem" }}>
+          {workProcess.map((step, i) => (
+            <AnimatedSection key={step.step} delay={i * 0.1}>
+              <div style={{
+                padding: "1.75rem", borderRadius: 12,
+                border: "1px solid rgba(245,158,11,0.1)",
+                background: "rgba(255,255,255,0.01)",
+                position: "relative", overflow: "hidden",
+                transition: "border-color 0.3s, transform 0.3s",
+              }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(245,158,11,0.35)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(245,158,11,0.1)"; e.currentTarget.style.transform = "translateY(0)"; }}
+              >
+                <div style={{
+                  fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "3rem",
+                  color: "rgba(245,158,11,0.08)", position: "absolute", top: 8, right: 16,
+                  lineHeight: 1, userSelect: "none",
+                }}>{step.step}</div>
+                <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "0.75rem", color: "#f59e0b", letterSpacing: 2, marginBottom: "0.75rem" }}>
+                  ADIM {step.step}
+                </div>
+                <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "1rem", marginBottom: "0.6rem" }}>{step.title}</div>
+                <div style={{ color: "#64748b", fontSize: "0.85rem", lineHeight: 1.7 }}>{step.desc}</div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        {/* Pricing */}
+        <AnimatedSection>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "2.5rem" }}>
+            <div style={{ width: 30, height: 1, background: "#f59e0b" }} />
+            <span style={{ color: "#f59e0b", fontSize: "0.75rem", fontWeight: 600, letterSpacing: 3, textTransform: "uppercase" }}>Fiyatlandırma</span>
+          </div>
+        </AnimatedSection>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.5rem", maxWidth: 960 }}>
+          {packages.map((pkg, i) => (
+            <AnimatedSection key={pkg.name} delay={i * 0.12}>
+              <PricingCard {...pkg} />
+            </AnimatedSection>
+          ))}
+        </div>
+
+        {/* CTA Banner */}
+        <AnimatedSection delay={0.2}>
+          <div style={{
+            marginTop: "4rem", maxWidth: 960,
+            padding: "2.5rem clamp(1.5rem,4vw,3rem)",
+            borderRadius: 16,
+            background: "linear-gradient(135deg, rgba(245,158,11,0.12) 0%, rgba(245,158,11,0.04) 100%)",
+            border: "1px solid rgba(245,158,11,0.25)",
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            flexWrap: "wrap", gap: "1.5rem",
+          }}>
+            <div>
+              <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "clamp(1.2rem,3vw,1.6rem)", marginBottom: "0.4rem" }}>
+                Projeniz için <span style={{ color: "#f59e0b" }}>ücretsiz danışın</span>
+              </div>
+              <div style={{ color: "#64748b", fontSize: "0.9rem" }}>
+                Bütçenize ve ihtiyaçlarınıza özel fiyat teklifi alın — 24 saat içinde dönüş.
+              </div>
+            </div>
+            <a href="mailto:yldzzmustafaa.98@gmail.com?subject=Freelance%20Web%20Projesi%20Teklif%20Talebi"
+              style={{
+                padding: "14px 32px", background: "#f59e0b", color: "#080c14",
+                border: "none", borderRadius: 8, fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 700, fontSize: "0.95rem", cursor: "pointer",
+                textDecoration: "none", display: "inline-block", whiteSpace: "nowrap",
+                transition: "transform 0.2s, box-shadow 0.2s",
+              }}
+              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 12px 30px rgba(245,158,11,0.35)"; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
+            >
+              Teklif Al →
+            </a>
+          </div>
+        </AnimatedSection>
+      </section>
+
       {/* CONTACT */}
       <section id="iletisim" style={{ padding: "100px clamp(1rem,6vw,6rem) 120px", position: "relative", zIndex: 1 }}>
         <AnimatedSection>
@@ -484,6 +680,95 @@ function SkillCard({ category, items, icon }) {
           }}>{item}</span>
         ))}
       </div>
+    </div>
+  );
+}
+
+function FreelanceServiceCard({ icon, title, desc, features }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        padding: "1.75rem", borderRadius: 12,
+        border: `1px solid ${hovered ? "rgba(245,158,11,0.4)" : "rgba(245,158,11,0.1)"}`,
+        background: hovered ? "rgba(245,158,11,0.05)" : "rgba(255,255,255,0.01)",
+        transition: "all 0.3s ease", cursor: "default",
+        transform: hovered ? "translateY(-5px)" : "translateY(0)",
+        boxShadow: hovered ? "0 20px 40px rgba(0,0,0,0.35)" : "none",
+        display: "flex", flexDirection: "column", height: "100%",
+      }}
+    >
+      <div style={{ fontSize: "1.4rem", marginBottom: "0.75rem", color: "#f59e0b" }}>{icon}</div>
+      <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "1.05rem", marginBottom: "0.65rem" }}>{title}</div>
+      <div style={{ color: "#64748b", fontSize: "0.85rem", lineHeight: 1.7, marginBottom: "1.25rem", flex: 1 }}>{desc}</div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+        {features.map(f => (
+          <div key={f} style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.8rem", color: "#94a3b8" }}>
+            <span style={{ color: "#f59e0b", fontSize: "0.65rem" }}>▸</span>{f}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function PricingCard({ name, price, currency, desc, color, features, popular }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        padding: "2rem", borderRadius: 14,
+        border: popular
+          ? `2px solid ${color}`
+          : `1px solid ${hovered ? "rgba(245,158,11,0.3)" : "rgba(245,158,11,0.1)"}`,
+        background: popular ? "rgba(245,158,11,0.06)" : "rgba(255,255,255,0.01)",
+        transition: "all 0.3s ease", position: "relative", overflow: "hidden",
+        transform: popular || hovered ? "translateY(-4px)" : "translateY(0)",
+        boxShadow: popular ? "0 0 40px rgba(245,158,11,0.15)" : hovered ? "0 20px 40px rgba(0,0,0,0.3)" : "none",
+        display: "flex", flexDirection: "column",
+      }}
+    >
+      {popular && (
+        <div style={{
+          position: "absolute", top: 16, right: 16,
+          padding: "4px 14px", borderRadius: 20, fontSize: "0.68rem", fontWeight: 700, letterSpacing: 1,
+          background: "rgba(245,158,11,0.2)", color: "#f59e0b", border: "1px solid rgba(245,158,11,0.4)",
+          textTransform: "uppercase",
+        }}>★ Popüler</div>
+      )}
+      <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.1rem", marginBottom: "0.4rem", color }}>{name}</div>
+      <div style={{ color: "#475569", fontSize: "0.8rem", marginBottom: "1.5rem" }}>{desc}</div>
+      <div style={{ display: "flex", alignItems: "baseline", gap: "4px", marginBottom: "1.75rem" }}>
+        {currency && <span style={{ color, fontSize: "1.2rem", fontWeight: 600 }}>{currency}</span>}
+        <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: price.length > 6 ? "1.4rem" : "2.2rem", color }}>{price}</span>
+        {currency && <span style={{ color: "#475569", fontSize: "0.8rem", marginLeft: 4 }}>'den başlayan</span>}
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", flex: 1 }}>
+        {features.map(f => (
+          <div key={f} style={{ display: "flex", alignItems: "center", gap: "0.65rem", fontSize: "0.85rem", color: "#94a3b8" }}>
+            <span style={{ color, fontWeight: 700, fontSize: "0.8rem" }}>✓</span>{f}
+          </div>
+        ))}
+      </div>
+      <a href="mailto:yldzzmustafaa.98@gmail.com?subject=Freelance%20Web%20Projesi%20Teklif%20Talebi"
+        style={{
+          marginTop: "1.75rem", padding: "12px", borderRadius: 8, textAlign: "center",
+          background: popular ? color : "transparent",
+          color: popular ? "#080c14" : color,
+          border: `1px solid ${color}`,
+          fontWeight: 700, fontSize: "0.88rem", cursor: "pointer",
+          textDecoration: "none", display: "block",
+          transition: "all 0.2s",
+        }}
+        onMouseEnter={e => { if (!popular) { e.currentTarget.style.background = color; e.currentTarget.style.color = "#080c14"; }}}
+        onMouseLeave={e => { if (!popular) { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = color; }}}
+      >
+        {price === "Teklif Al" ? "Teklif İste →" : "Hemen Başla →"}
+      </a>
     </div>
   );
 }
